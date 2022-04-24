@@ -24,7 +24,7 @@ public class TestCalculatorV2 {
 
 	@Before
 	public void setup() {
-		// calculator = new Calculator(calculatorService);
+		 calculator = new Calculator(calculatorService);
 	}
 
 	@Test
