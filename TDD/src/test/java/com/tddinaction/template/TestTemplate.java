@@ -5,6 +5,9 @@ import org.junit.*;
 import com.tddinaction.template.MissingValueException;
 import com.tddinaction.template.Template;
 import static org.junit.Assert.*;
+import static org.junit.Assume.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class TestTemplate {
 
@@ -62,4 +65,25 @@ public class TestTemplate {
     private void assertTemplateEvaluatesTo(String expected) {
         assertEquals(expected, template.evaluate());
     }
+    
+
+    @Test
+    public void testHowGroupCountWorks() throws Exception {
+    	 String haystack = "The needle shop sells needles";
+    	    String regex = "(needle)";
+    	    Matcher matcher = Pattern.compile(regex).matcher(haystack);
+    	    assertTrue(matcher.find());
+    	    assertEquals("Wrong start index of 1st match", 4, matcher.start());
+    	    assertEquals("Wrong end index of 1st match", 10, matcher.end());
+    }
+    
+    @Test
+    public void testOnDev() 
+    {
+        System.setProperty("ENV", "PROD");
+        assumeTrue("DEV".equals(System.getProperty("ENV")));
+        System.out.println("will run testOnDev()");
+        assertEquals(4, 4);
+    }
+    
 }

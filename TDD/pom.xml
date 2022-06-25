@@ -12,7 +12,7 @@
 	</description>
 	<url>http://www.manning.com/koskela</url>
 
-	<repositories>
+	<!-- <repositories>
 		<repository>
 			<id>jsptest.sf.net</id>
 			<name>JspTest Maven 2 repository</name>
@@ -52,7 +52,7 @@
 			<name>LaughingPanda Maven 2 Repository</name>
 			<url>http://www.laughingpanda.org/maven2/</url>
 		</repository>
-	</repositories>
+	</repositories> -->
 
 	<dependencies>
 		<dependency>
@@ -69,7 +69,8 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.3.1</version>
+			<!-- <version>4.3.1</version> -->
+			<version>4.12</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.wicket</groupId>

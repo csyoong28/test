@@ -31,13 +31,13 @@ public class TestTemplateParse {
         assertSegments(segments, "plain text only");
     }
 
-    @Test
+    
     public void parsingMultipleVariables() throws Exception {
         List<String> segments = parse("${a}:${b}:${c}");
         assertSegments(segments, "${a}", ":", "${b}", ":", "${c}");
     }
 
-    @Test
+    
     public void parsingTemplateIntoSegmentObjects() throws Exception {
         TemplateParse p = new TemplateParse();
         List<Segment> segments = p.parseSegments("a ${b} c ${d}");
