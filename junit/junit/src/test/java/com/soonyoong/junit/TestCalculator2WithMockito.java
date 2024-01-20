@@ -1,28 +1,20 @@
 package com.soonyoong.junit;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-import org.junit.Before;
-import org.junit.Rule;
-import org.junit.Test;
-import org.mockito.Mock;
-import org.mockito.Mockito;
-import org.mockito.junit.MockitoJUnit;
-import org.mockito.junit.MockitoRule;
 
-public class TestCalculator {
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
+
+public class TestCalculator2WithMockito {
 	
 	Calculator calculator = null;
-	@Mock
-	CalculatorService calculatorService;
-	@Rule
-	public MockitoRule mockitoRule = MockitoJUnit.rule();
-	//or 
-	//CalculatorService calculatorService = Mockito.mock(CalculatorService.class);
+	CalculatorService calculatorService = Mockito.mock(CalculatorService.class);
 	
-	@Before
+	@BeforeEach
 	public void setup() {
 		calculator = new Calculator(calculatorService);
 	}
